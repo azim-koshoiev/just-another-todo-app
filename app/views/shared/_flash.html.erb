@@ -1,0 +1,8 @@
+<% flash.each do |key, value| %>
+  <div class="container" id="flash__container">
+    <div class="alert  <%= key == 'notice' ? 'alert-primary' : 'alert-danger' %>" role="alert">
+      <%= value %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="getElementById('flash__container').style.display = 'none'"></button>
+    </div>
+  </div>
+<% end %>

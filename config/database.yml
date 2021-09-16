@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: todoapp_development
+test:
+  <<: *default
+  database: todoapp_test
+
+#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+production:
+  url: <%= ENV['DATABASE_URL'] %>
